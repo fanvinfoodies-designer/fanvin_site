@@ -154,8 +154,24 @@ body{
   box-shadow: 0 20px 40px rgba(11,18,32,0.06);
   background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,249,255,0.6));
 }
-.visual-logo{ height:110px; }
-.visual-note{ font-size:0.8rem; color:var(--muted); margin:0 }
+
+/* corrected + enlarged logo box */
+.visual-logo{
+  width: 100%;
+  width: 320px;     /* increase this if you want a larger box */
+  height: 320px;        /* same height for perfect scaling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-logo img{
+  max-width: 480px;
+  height: 480px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
 
 /* sections */
 .section{ padding:3rem 0; }
@@ -164,8 +180,25 @@ body{
 
 /* grid utilities */
 .grid{ display:grid; gap:1rem; }
-.grid.three{ grid-template-columns: repeat(3, 1fr); }
-.team-grid{ grid-template-columns: repeat(3, 1fr); }
+.grid.one {
+  grid-template-columns: 1fr;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.what-logo {
+  width: 80px;              /* adjust size here */
+  display: block;
+  margin: 0 auto 1rem auto; /* center + spacing below */
+  opacity: 0.85;            /* optional: softer look */
+}
+
+
+.team-grid{
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /* cards */
 .card{
@@ -222,7 +255,7 @@ body{
 /* responsive */
 @media (max-width:1000px){
   .hero-inner{ grid-template-columns: 1fr 320px; }
-  .grid.three{ grid-template-columns: repeat(2, 1fr); }
+  /* .grid.one{ grid-template-columns: repeat(2, 1fr); } */
   .team-grid{ grid-template-columns: repeat(2, 1fr); }
   .contact-grid{ grid-template-columns: 1fr 280px; }
 }
@@ -231,7 +264,8 @@ body{
   .nav-toggle{ display:block; }
   .hero-inner{ grid-template-columns: 1fr; gap:1rem; }
   .card-visual{ order:-1; }
-  .grid.three, .team-grid{ grid-template-columns: 1fr; }
+  /* .grid.one { grid-template-columns: 1fr; } */
+  .team-grid{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; }
   .header-inner{ gap:0.5rem; padding:0.45rem 0; }
   .logo{ height:42px; }
