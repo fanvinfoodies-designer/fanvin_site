@@ -3,7 +3,7 @@
   --accent-dark:#07134f; /* pulled from logo tones */
   --accent:#1761ff;
   --muted:#6b7280;
-  --bg:#ffffff;
+  --bg:#ffffgg;
   --card:#ffffff;
   --radius:14px;
   --gap:1.25rem;
@@ -15,7 +15,7 @@ html,body{height:100%}
 body{
   margin:0;
   background:linear-gradient(180deg,#fafbff 0%, #ffffff 100%);
-  color:#0b1220;
+  color:#072663;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.5;
@@ -41,6 +41,7 @@ body{
   background:rgba(255,255,255,0.6);
   border-bottom:1px solid rgba(10,12,20,0.04);
 }
+
 .header-inner{
   display:flex;
   align-items:center;
@@ -48,10 +49,12 @@ body{
   gap:var(--gap);
   padding:0.6rem 0;
 }
+
 .logo{
-  height:48px;
+  height:60px;
   display:block;
 }
+
 /* nav */
 .nav-list{
   display:flex;
@@ -61,6 +64,7 @@ body{
   margin:0;
   padding:0;
 }
+
 .nav-list a{
   text-decoration:none;
   color:var(--muted);
@@ -70,10 +74,11 @@ body{
 }
 .nav-list a:hover{ color:var(--accent-dark) }
 .nav-list a.cta{
-  background:var(--accent);
+  /* background:var(--accent); */
+  background-color: #1d43ff;
   color:white;
   padding:0.5rem 0.9rem;
-  box-shadow:0 8px 20px rgba(23,97,255,0.18);
+  box-shadow:0 8px 20px rgba(10, 61, 172, 0.18);
 }
 
 /* mobile toggle */
@@ -158,8 +163,9 @@ body{
 /* corrected + enlarged logo box */
 .visual-logo{
   width: 100%;
-  width: 320px;     /* increase this if you want a larger box */
-  height: 320px;        /* same height for perfect scaling */
+  height: 100%;
+  /* width: 320px; */
+  /* height: 320px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,7 +198,6 @@ body{
   margin: 0 auto 1rem auto; /* center + spacing below */
   opacity: 0.85;            /* optional: softer look */
 }
-
 
 .team-grid{
   grid-template-columns: repeat(2, 1fr);
@@ -251,6 +256,7 @@ body{
 /* reveal animation */
 .reveal{ opacity:0; transform:translateY(10px); transition:opacity 600ms ease, transform 600ms ease; }
 .reveal.visible{ opacity:1; transform:translateY(0); }
+
 
 /* responsive */
 @media (max-width:1000px){
